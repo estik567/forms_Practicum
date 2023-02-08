@@ -1,4 +1,4 @@
-﻿using forms.Repositories.Entities;
+﻿using forms.Repositories.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace forms.Repositories.Entities;
+namespace forms.Repositories.Models;
 
 public partial class User
 {

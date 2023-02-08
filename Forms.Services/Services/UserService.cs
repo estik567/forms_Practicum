@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using forms.Repositories.Entities;
+using forms.Repositories.Models;
 using forms.Repositories.Interfaces;
 using Forms.Common.Dto_s;
 using Forms.Services.Interfaces;
@@ -37,7 +37,7 @@ namespace Forms.Services.Services
 
         public async Task<List<UserDto>> GetAllAsync()
         {
-             return  _mapper.Map<List<UserDto>>(await _user.GetAllAsync());
+            return _mapper.Map<List<UserDto>>(await _user.GetAllAsync());
 
         }
 

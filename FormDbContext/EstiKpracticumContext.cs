@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace forms.Repositories.Entities;
+namespace forms.Repositories.Models;
 
 public partial class EstiKpracticumContext : DbContext,IContext
 {
@@ -37,10 +37,8 @@ public partial class EstiKpracticumContext : DbContext,IContext
             entity.Property(e => e.ChildName)
                 .HasMaxLength(20)
                 .HasColumnName("childName");
-            entity.Property(e => e.ChildTz)
-                .HasMaxLength(9)
-                .HasColumnName("childTz");
-            entity.Property(e => e.ParentId).HasColumnName("parentId");
+            entity.Property(e => e.ChildTz).HasMaxLength(9);
+            entity.Property(e => e.ParentTz).HasMaxLength(9);
         });
 
         modelBuilder.Entity<User>(entity =>
@@ -55,13 +53,13 @@ public partial class EstiKpracticumContext : DbContext,IContext
                 .HasMaxLength(20)
                 .HasColumnName("firstName");
             entity.Property(e => e.Hmo)
-                .HasMaxLength(30)
+                .HasMaxLength(20)
                 .HasColumnName("hmo");
             entity.Property(e => e.LastName)
                 .HasMaxLength(20)
                 .HasColumnName("lastName");
             entity.Property(e => e.MaleOrFemale)
-                .HasMaxLength(5)
+                .HasMaxLength(20)
                 .HasColumnName("maleOrFemale");
             entity.Property(e => e.Tz)
                 .HasMaxLength(9)

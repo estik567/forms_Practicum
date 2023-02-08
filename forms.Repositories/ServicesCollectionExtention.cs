@@ -1,5 +1,5 @@
-﻿using forms.Repositories.Entities;
-using forms.Repositories.Interfaces;
+﻿using forms.Repositories.Interfaces;
+using forms.Repositories.Models;
 using forms.Repositories.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using System;

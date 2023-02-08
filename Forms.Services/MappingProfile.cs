@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using forms.Repositories.Entities;
+using forms.Repositories.Models;
 using Forms.Common.Dto_s;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Forms.Services
 {
-    public class MappingProfile:Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {

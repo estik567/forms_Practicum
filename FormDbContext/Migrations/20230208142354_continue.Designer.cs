@@ -3,6 +3,7 @@
 //using Microsoft.EntityFrameworkCore;
 //using Microsoft.EntityFrameworkCore.Infrastructure;
 //using Microsoft.EntityFrameworkCore.Metadata;
+//using Microsoft.EntityFrameworkCore.Migrations;
 //using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 //using forms.Repositories.Models;
 
@@ -11,9 +12,11 @@
 //namespace FormDbContext.Migrations
 //{
 //    [DbContext(typeof(EstiKpracticumContext))]
-//    partial class EstiKpracticumContextModelSnapshot : ModelSnapshot
+//    [Migration("20230208142354_continue")]
+//    partial class @continue
 //    {
-//        protected override void BuildModel(ModelBuilder modelBuilder)
+//        /// <inheritdoc />
+//        protected override void BuildTargetModel(ModelBuilder modelBuilder)
 //        {
 //#pragma warning disable 612, 618
 //            modelBuilder
@@ -24,7 +27,7 @@
 
 //            modelBuilder.Entity("forms.Repositories.Models.Child", b =>
 //                {
-//                    b.Property<int?>("ChildId")
+//                    b.Property<int>("ChildId")
 //                        .HasColumnType("int")
 //                        .HasColumnName("childId");
 

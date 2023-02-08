@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace forms.Repositories.Entities;
+namespace forms.Repositories.Models;
 
 public partial class Child
 {
@@ -13,7 +12,6 @@ public partial class Child
     public DateTime ChildDateBorn { get; set; }
 
     public string ChildTz { get; set; } = null!;
-    [ForeignKey("UserId")]
 
-    public int ParentId { get; set; }
+    public string ParentTz { get; set; } = null!;
 }

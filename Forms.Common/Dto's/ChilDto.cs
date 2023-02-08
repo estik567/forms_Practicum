@@ -16,8 +16,7 @@ namespace Forms.Common.Dto_s
         public DateTime ChildDateBorn { get; set; }
 
         public string ChildTz { get; set; } = null!;
-        [ForeignKey("UserId")]
 
-        public int ParentId { get; set; }
+        public string ParentTz { get; set; } = null!;
     }
 }

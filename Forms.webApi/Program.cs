@@ -6,8 +6,10 @@ namespace Forms.webApi
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
+           
 
+            var builder = WebApplication.CreateBuilder(args);
+          
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -17,6 +19,10 @@ namespace Forms.webApi
 
             builder.Services.AddServices();
 
+            builder.Services.AddCors(opt => opt.AddPolicy("PolicyName", policy =>
+            {
+                policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            }));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -32,6 +38,7 @@ namespace Forms.webApi
 
 
             app.MapControllers();
+            app.UseCors("PolicyName");
 
             app.Run();
         }

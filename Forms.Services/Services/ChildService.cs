@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using forms.Repositories.Entities;
+using forms.Repositories.Models;
 using forms.Repositories.Interfaces;
 using Forms.Common.Dto_s;
 using Forms.Services.Interfaces;
