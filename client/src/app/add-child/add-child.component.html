@@ -1,0 +1,47 @@
+<a routerLink="/fillForm">instruction</a>
+
+<form (ngSubmit)="save();myForm.reset()" #myForm="ngForm">
+    <tr>
+        <td><mat-form-field class="example-full-width">
+                <mat-label>First name</mat-label>
+                <input matInput type="text" name="name" id="name" [(ngModel)]="emptyChild.childName" required>
+            </mat-form-field></td>
+    </tr>
+    <!-- <label for="name">name</label> <br/>
+    <input type="text" name="name" id="name" [(ngModel)]="emptyChild.childName" required/><br/> -->
+    <tr>
+        <td><mat-form-field class="example-full-width">
+                <mat-label>childDateBorn</mat-label>
+                <input matInput type="date" name="date" id="date" [(ngModel)]="emptyChild.childDateBorn" required>
+            </mat-form-field></td>
+    </tr>
+    <!-- <label for="date">childDateBorn</label><br/>
+    <input type="date" name="date" id="date" [(ngModel)]="emptyChild.childDateBorn" required/><br/> -->
+    <tr>
+        <td><mat-form-field class="example-full-width">
+                <mat-label>Tz</mat-label>
+                <input matInput type="text" name="tz" id="tz" [(ngModel)]="emptyChild.childTz" required minlength="9" maxlength="9" #tz='ngModel'>
+            </mat-form-field></td>
+    </tr>
+    <!-- <label for="tz">tz</label><br/>
+    <input type="text" name="tz" id="tz" [(ngModel)]="emptyChild.childTz" required minlength="9" maxlength="9" #tz='ngModel'  ng-pattern="onlyNumbers"/><br/> -->
+    <!-- <div *ngIf="tz.touched&&tz.errors?.valid">Not only number!</div><br /> -->
+
+    <div *ngIf="tz.touched&&tz.errors?.minlength" class="error">tz must have
+        {{tz.errors.minlength.requiredLength}} numbers</div><br />
+ 
+        
+
+        <mat-card-actions>
+            <button mat-raised-button type="submit" color="primary" [disabled]="!myForm.valid" >שלח</button>
+          </mat-card-actions>
+</form>
+<br/>
+<section>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="back()">back</button>
+    </div>
+  </section>
+
+
+

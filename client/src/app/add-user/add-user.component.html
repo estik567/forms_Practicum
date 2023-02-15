@@ -1,0 +1,60 @@
+<a routerLink="/fillForm">instruction</a><br />
+
+<form (ngSubmit)="save();myForm.reset()" #myForm="ngForm">
+    <!-- <form class="my-form" #loginForm=ngForm (ngSubmit)="Submit()"></form> -->
+        <tr>
+            <td><mat-form-field class="example-full-width">
+                    <mat-label>First name</mat-label>
+                    <input matInput type="text" name="fname" id="fname" [(ngModel)]="empty.firstName" required>
+                </mat-form-field></td>
+        </tr>
+         <tr>
+            <td><mat-form-field class="example-full-width">
+                    <mat-label>Last name</mat-label>
+                    <input matInput type="text" name="lname" id="lname" [(ngModel)]="empty.lastName" required>
+                </mat-form-field></td>
+        </tr>
+
+        <tr>
+            <td><mat-form-field class="example-full-width">
+                    <mat-label>Tz</mat-label>
+                    <input matInput type="text" name="tz" id="tz" [(ngModel)]="empty.tz" required minlength="9"
+                        maxlength="9" #tz='ngModel'>
+
+                </mat-form-field>
+
+                 <div *ngIf="tz.touched&&tz.errors?.minlength" class="error">tz must have
+                    {{tz.errors.minlength.requiredLength}} numbers</div><br />
+                    <!-- <div *ngIf="tz.touched&&tz.errors?.pattern">Not only number!</div><br />  -->
+            </td>
+        </tr>
+
+        <tr>
+            <td><mat-form-field class="example-full-width">
+                    <mat-label>dateBorn</mat-label>
+                    <input matInput type="date" name="dateb" id="dateb" [(ngModel)]="empty.dateBorn" required />
+                </mat-form-field></td>
+        </tr>
+        <tr>
+            <td><mat-form-field class="example-full-width">
+                    <mat-label>male/Female</mat-label>
+                    <input matInput type="text" name="m" id="m" [(ngModel)]="empty.maleOrFemale" required />
+                </mat-form-field></td>
+        </tr>
+        <tr>
+            <td><mat-form-field class="example-full-width">
+                    <mat-label>hmo</mat-label>
+                    <input matInput type="text" name="hmo" id="hmo" [(ngModel)]="empty.hmo" required />
+                </mat-form-field></td>
+        </tr>
+        <section>
+            <div class="example-button-row">
+              <button mat-raised-button color="primary" (click)="addchild(tz.value)">Add child?</button>
+            </div>
+          </section> <br />
+
+
+     <mat-card-actions>
+        <button mat-raised-button type="submit" color="primary" [disabled]="!myForm.valid" >שלח</button>
+      </mat-card-actions>
+</form>
